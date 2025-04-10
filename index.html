@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiloh - Mobile Car Wash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("AcdEom7B15LaYZi58"); // Replace with your public key
+</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800, // Smooth and elegant effect
+        easing: "ease-in-out",
+        once: true // Runs only once for better performance
+    });
+</script>
+
+<body class="bg-gray-100">
+<nav id="navbar" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-500 opacity-0 backdrop-blur-md h-14 flex items-center" style="background:linear-gradient(135deg,#A0E9FF, #00AEEF);">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#" class="flex items-center space-x-2">
+            <img src="images/logo.png" alt="" class="h-16 object-contain" style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));"> 
+            <span class="text-xl font-bold text-white">Shiloh</span>
+        </a>
+
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#home" class="font-bold text-white hover:text-blue-500">Home</a></li>
+            <li><a href="#About" class="font-bold text-white hover:text-blue-500">About</a></li>
+            <li><a href="#services" class="font-bold text-white hover:text-blue-500">Services & Pricing</a></li>
+            <li><a href="#book" class="font-bold text-white hover:text-blue-500">Booking</a></li>
+            <li><a href="#contact" class="font-bold text-white hover:text-blue-500">Contact</a></li>
+            <li><a href="#faq" class="font-bold text-white hover:text-blue-500">FAQ</a></li>
+        </ul>
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md" style="background:linear-gradient(135deg,#A0E9FF, #00AEEF);">
+        <ul class="flex flex-col text-center space-y-4 p-4">
+            <li><a href="#home" class="text-white hover:text-blue-500">Home</a></li>
+            <li><a href="#About" class="text-white hover:text-blue-500">About</a></li>
+            <li><a href="#services" class="text-white hover:text-blue-500">Services & Pricing</a></li>
+            <li><a href="#book" class="text-white hover:text-blue-500">Booking</a></li>
+            <li><a href="#contact" class="text-white hover:text-blue-500">Contact</a></li>
+            <li><a href="#faq" class="text-white hover:text-blue-500">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let navbar = document.getElementById("navbar");
+    navbar.style.opacity = "1";
+});
+
+document.addEventListener("scroll", function () {
+    let navbar = document.getElementById("navbar");
+    let scrollPosition = window.scrollY;
+
+    if (scrollPosition > 50) {
+        navbar.style.opacity = "0.7"; 
+    } else {
+        navbar.style.opacity = "1"; 
+    }
+});
+    </script>
+    
+<section id="home" class="relative w-full h-screen font-[Poppins,sans-serif]">
+    <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-cover bg-center relative" 
+                 style="background-image: url('images/close-up-car-care-washing.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div> 
+                <div class="flex items-center justify-center h-full text-center text-white px-6">
+                    <div>
+                        <h1 class="text-6xl font-extrabold">Mobile Car Wash & Detail</h1>
+                        <p class="mt-4 text-xl font-medium">
+                            No more stopping your day. No more sitting at the car wash. 
+                            Spiffy comes to you at home or at work! It takes less than a minute to book.
+                        </p>
+                        <a href="#booking" 
+                           class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white 
+                                  px-8 py-4 rounded-lg text-lg font-semibold shadow-md 
+                                  transition-all duration-300 hover:from-blue-600 hover:to-cyan-500 hover:scale-105">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide bg-cover bg-center relative" 
+                 style="background-image: url('images/pexels-tima-miroshnichenko-6873088.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="flex items-center justify-center h-full text-center text-white px-6">
+                    <div>
+                        <h1 class="text-6xl font-extrabold">We Come to You!</h1>
+                        <p class="mt-4 text-xl font-medium">
+                            No need to drive to a car wash—whether you're at home or work, 
+                            our professionals will take care of your car while you focus on your day.
+                        </p>
+                        <a href="#booking" 
+                           class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white 
+                                  px-8 py-4 rounded-lg text-lg font-semibold shadow-md 
+                                  transition-all duration-300 hover:from-blue-600 hover:to-cyan-500 hover:scale-105">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide bg-cover bg-center relative" 
+                 style="background-image: url('images/car-wash-detailing-station.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="flex items-center justify-center h-full text-center text-white px-6">
+                    <div>
+                        <h1 class="text-6xl font-extrabold">We Come to You!</h1>
+                        <p class="mt-4 text-xl font-medium">
+                            No need to drive to a car wash—whether you're at home or work, 
+                            our professionals will take care of your car while you focus on your day.
+                        </p>
+                        <a href="#booking" 
+                           class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white 
+                                  px-8 py-4 rounded-lg text-lg font-semibold shadow-md 
+                                  transition-all duration-300 hover:from-blue-600 hover:to-cyan-500 hover:scale-105">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide bg-cover bg-center relative" 
+                 style="background-image: url('images/pexels-karolina-grabowska-4870705.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                <div class="flex items-center justify-center h-full text-center text-white px-6">
+                    <div>
+                        <h1 class="text-6xl font-extrabold">Eco-Friendly & High-Quality Service</h1>
+                        <p class="mt-4 text-xl font-medium">
+                            Our advanced cleaning techniques use minimal water and eco-friendly products,  
+                            ensuring a spotless car while protecting the environment.
+                        </p>
+                        <a href="#booking" 
+                           class="mt-6 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white 
+                                  px-8 py-4 rounded-lg text-lg font-semibold shadow-md 
+                                  transition-all duration-300 hover:from-blue-600 hover:to-cyan-500 hover:scale-105">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+    
+    <section id="About" class="py-16 bg-white text-center">
+        <h2 class="text-3xl font-bold text-blue-600">Why Choose Shiloh?</h2>
+        
+        <div class="mt-10 grid md:grid-cols-3 gap-8 px-6" data-aos="slide-right">
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-blue-500">We Come to You</h3>
+                <p class="text-gray-700 mt-2">
+                    No more wasting time at a car wash. Whether you're at home or work, we bring the service to you.
+                </p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md" data-aos="slide-right">
+                <h3 class="text-xl font-semibold text-blue-500">Simple & Hassle-Free</h3>
+                <p class="text-gray-700 mt-2">
+                    No complicated menus or hidden fees. Just easy, transparent pricing for a spotless car.
+                </p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md" data-aos="slide-right">
+                <h3 class="text-xl font-semibold text-blue-500">Fast & Easy Booking</h3>
+                <p class="text-gray-700 mt-2">
+                    Book your car wash in less than a minute. Quick, simple, and stress-free!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-100 relative bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url(images/Background\ for\ pricing\ .jpg); filter: opacity: 0.8;">
+        </div>
+    
+        <div class="relative container mx-auto text-center px-6" data-aos="slide-right">
+            <h2 class="text-4xl font-bold text-white mb-10 ">Our Pricing Packages</h2>
+    
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 hover:text-blue-700">Deluxe Exterior</h3>
+                    <p class="text-xl text-gray-700 font-bold mt-2">$29.95</p>
+                    <hr class="my-3 border-blue-300">
+                    <p class="text-gray-600">Exterior Wash / WHEEL:</p>
+                    <p class="text-gray-700">Mid-Size: $34.95 | SUV: $39.95</p>
+                </div>
+    
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 hover:text-blue-700">Deluxe Interior</h3>
+                    <p class="text-xl text-gray-700 font-bold mt-2">$29.95</p>
+                    <hr class="my-3 border-blue-300">
+                    <p class="text-gray-600">Vacuum Interior / Dust Dash:</p>
+                    <p class="text-gray-700">Mid-Size: $34.95 | SUV: $39.95</p>
+                </div>
+    
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 hover:text-blue-700">Leather Cleaning & Upholstery</h3>
+                    <p class="text-xl text-gray-700 font-bold mt-2">$39.95</p>
+                    <hr class="my-3 border-blue-300">
+                    <p class="text-gray-600">Deep Leather Clean & Conditioning</p>
+                    <p class="text-gray-700">Mid-Size: $49.95 | SUV: $54.95</p>
+                </div>
+    
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 hover:text-blue-700">Engine Shampoo</h3>
+                    <p class="text-xl text-gray-700 font-bold mt-2">$34.95</p>
+                    <hr class="my-3 border-blue-300">
+                    <p class="text-gray-600">Thorough Engine Bay Cleaning</p>
+                </div>
+    
+                <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 hover:text-blue-700">Deluxe Exterior Hand Wax</h3>
+                    <p class="text-xl text-gray-700 font-bold mt-2">$79.95</p>
+                    <hr class="my-3 border-blue-300">
+                    <p class="text-gray-600">Hand Carnauba Wax & Exterior Wash</p>
+                    <p class="text-gray-700">Mid-Size: $99.95 | SUV: $109.95</p>
+                </div>
+            </div>
+    
+            <a href="#booking" 
+               class="mt-10 inline-block bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md 
+                      hover:from-blue-600 hover:to-teal-600 transition-transform transform hover:scale-105" data-aos="slide-right">
+                Book Now
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-4xl font-bold text-blue-600 mb-8">Contact Us</h2>
+            
+            <div class="mb-8" data-aos="fade-up" data-aos="slide-right">
+                <!-- <iframe class="w-full h-72 rounded-lg shadow-lg" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509378!2d144.96305791590465!3d-37.81627967975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1a4c3df%3A0xb50b0c927553b0b1!2sMelbourne%20CBD!5e0!3m2!1sen!2sus!4v1634766323339!5m2!1sen!2sus" 
+                        allowfullscreen="" loading="lazy"></iframe> -->
+                        <iframe class="w-full h-72 rounded-lg shadow-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1472037.8749604279!2d-80.6179744!3d43.8957346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2a1d7471156d%3A0x4ecad8e272e4c2a2!2sGreater%20Toronto%20Area%2C%20ON%2C%20Canada!5e0!3m2!1sen!2set!4v1739293061783!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="slide-right">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">📞 Call Us</h3>
+                    <p class="text-lg text-gray-600">+1 (123) 456-7890</p>
+                </div>
+    
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">✉️ Email Us</h3>
+                    <p class="text-lg text-gray-600">Shiloh@carwash.com</p>
+                </div>
+    
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">⏰ Working Hours</h3>
+                    <p class="text-lg text-gray-600">Mon - Sun: 7:00 AM - 10:00 PM</p>
+                </div>
+    
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">📍 Service Area</h3>
+                    <p class="text-lg text-gray-600">We come to you! Serving multiple locations.</p>
+                </div>
+            </div>
+    
+            <div class="mt-8 flex justify-center space-x-6" data-aos="slide-right">
+                <a href="#" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 text-3xl"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-red-600 hover:text-red-800 text-3xl"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+<!-- 
+    <section id="book" class="py-16 bg-gray-100 relative bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url(images/Pricing\ package.jpg); filter: opacity: 0.8;">
+        </div>
+
+        <div class="relative container mx-auto text-center px-6">
+            <h2 class="text-4xl font-bold text-white mb-10 ">Book our service</h2>
+            <p>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+                . <br>
+            </p>
+        </div>
+    </section> -->
+
+    <section id="booking" class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-bold text-blue-400 mb-10">Book Your Car Wash</h2>
+      
+          <form id="bookingForm" class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+            <!-- Full Name -->
+            <div class="mb-4">
+              <label for="fullName" class="block text-left text-lg">Full Name</label>
+              <input type="text" name="entry.825855891" id="fullName" placeholder="Enter your full name" required
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400" />
+            </div>
+      
+            <!-- Email Address -->
+            <div class="mb-4">
+              <label for="email" class="block text-left text-lg">Email Address</label>
+              <input type="email" name="entry.1104851958" id="email" placeholder="Enter your email" required
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400" />
+            </div>
+      
+            <!-- Phone Number -->
+            <div class="mb-4">
+              <label for="phone" class="block text-left text-lg">Phone Number</label>
+              <input type="tel" name="entry.1738805384" id="phone" placeholder="Enter your phone number" required
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400" />
+            </div>
+      
+            <!-- Select Package -->
+            <div class="mb-4">
+              <label for="package" class="block text-left text-lg">Select Package</label>
+              <select name="entry.1936963021" id="package" required
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400">
+                <option value="" disabled selected>Select a package</option>
+                <option value="Deluxe Exterior - $29.95">Deluxe Exterior - $29.95</option>
+                <option value="Deluxe Exterior (Mid-Size) - $34.95">Deluxe Exterior (Mid-Size) - $34.95</option>
+                <option value="Deluxe Exterior (SUV) - $39.95">Deluxe Exterior (SUV) - $39.95</option>
+                <option value="Deluxe Interior - $29.95">Deluxe Interior - $29.95</option>
+                <option value="Deluxe Interior (Mid-Size) - $34.95">Deluxe Interior (Mid-Size) - $34.95</option>
+                <option value="Deluxe Interior (SUV) - $39.95">Deluxe Interior (SUV) - $39.95</option>
+                <option value="Leather Cleaning & Upholstery - $39.95">Leather Cleaning & Upholstery - $39.95</option>
+                <option value="Leather Cleaning & Upholstery (Mid-Size) - $49.95">Leather Cleaning & Upholstery (Mid-Size) - $49.95</option>
+                <option value="Leather Cleaning & Upholstery (SUV) - $54.95">Leather Cleaning & Upholstery (SUV) - $54.95</option>
+                <option value="Engine Shampoo - $34.95">Engine Shampoo - $34.95</option>
+                <option value="Deluxe Exterior Hand Wax - $79.95">Deluxe Exterior Hand Wax - $79.95</option>
+                <option value="Deluxe Exterior Hand Wax (Mid-Size) - $99.95">Deluxe Exterior Hand Wax (Mid-Size) - $99.95</option>
+                <option value="Deluxe Exterior Hand Wax (SUV) - $109.95">Deluxe Exterior Hand Wax (SUV) - $109.95</option>
+              </select>
+            </div>
+      
+            <!-- Booking Date -->
+            <div class="mb-4">
+              <label for="date" class="block text-left text-lg">Preferred Date</label>
+              <input type="date" name="entry.363225584" id="date" required
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400" />
+            </div>
+      
+            <!-- Message (Optional) -->
+            <div class="mb-6">
+              <label for="message" class="block text-left text-lg">Additional Message (Optional)</label>
+              <textarea name="entry.1568867278" id="message" rows="4" placeholder="Any special request?"
+                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-blue-400"></textarea>
+            </div>
+      
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:from-blue-600 hover:to-teal-600 transition-transform transform hover:scale-105">
+              Submit Booking
+            </button>
+      
+            <!-- Success Message -->
+            <p id="successMessage" class="mt-4 text-green-400 text-lg hidden">Your booking was submitted successfully!</p>
+          </form>
+        </div>
+      
+        <!-- EmailJS and Submission Script -->
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+          (function () {
+            emailjs.init("AcdEom7B15LaYZi58"); // Your EmailJS Public Key
+          })();
+      
+          document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+      
+            const form = e.target;
+            const formData = new FormData(form);
+            const queryString = new URLSearchParams(formData).toString();
+      
+            const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmfznW5OF2h3VFcdKR42QwgAx-8a-XWyRDnY1Z04kzOsD0Vw/formResponse";
+      
+            // EmailJS Params
+            const emailParams = {
+              full_name: form.fullName.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              package: form.package.value,
+              date: form.date.value,
+              message: form.message.value
+            };
+      
+            try {
+              // Send data to Google Form
+              await fetch(googleFormURL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: queryString,
+              });
+      
+              // Send email via EmailJS
+              emailjs.send("service_jqqtegu", "template_nsjbwo9", emailParams)
+                .then(() => {
+                  document.getElementById("successMessage").textContent = "✅ Booking confirmed! Confirmation email sent.";
+                  document.getElementById("successMessage").classList.remove("hidden", "text-green-400", "text-yellow-400", "text-red-400");
+                  document.getElementById("successMessage").classList.add("text-green-400");
+                  form.reset();
+                })
+                .catch((error) => {
+                  console.error("EmailJS Error:", error);
+                  document.getElementById("successMessage").textContent = "✅ Booking confirmed, but email not sent.";
+                  document.getElementById("successMessage").classList.remove("hidden");
+                  document.getElementById("successMessage").classList.add("text-yellow-400");
+                  form.reset();
+                });
+      
+            } catch (error) {
+              console.error("Submission error:", error);
+              document.getElementById("successMessage").textContent = "❌ Something went wrong. Please try again.";
+              document.getElementById("successMessage").classList.remove("hidden");
+              document.getElementById("successMessage").classList.add("text-red-400");
+            }
+          });
+        </script>
+      </section>
+
+    <section id="faq" class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-6" data-aos="slide-right">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-10">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+                <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
+                    How does the mobile car wash service work?
+                    <span class="text-xl">+</span>
+                </button>
+                <p class="hidden mt-2 text-gray-600">
+                    Our professional team comes to your location and provides high-quality car cleaning services. 
+                    You book online, and we handle the rest!
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+                <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
+                    Do I need to be present during the service?
+                    <span class="text-xl">+</span>
+                </button>
+                <p class="hidden mt-2 text-gray-600">
+                    No, you don’t have to be present as long as we have access to your vehicle. 
+                    Just leave any special instructions when booking.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+                <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
+                    What areas do you serve?
+                    <span class="text-xl">+</span>
+                </button>
+                <p class="hidden mt-2 text-gray-600">
+                    We provide services in a wide range of locations. 
+                    Check our service area page or contact us to confirm coverage in your area.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+                <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
+                    What if it rains on the day of my appointment?
+                    <span class="text-xl">+</span>
+                </button>
+                <p class="hidden mt-2 text-gray-600">
+                    If the weather is bad, we will contact you to reschedule or provide an alternative service option.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+        
+        <div>
+            <h2 class="text-2xl font-bold text-white">Shiloh Mobile Car Wash</h2>
+            <p class="mt-2 text-gray-400">Bringing car care to your doorstep with professional and eco-friendly cleaning.</p>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold text-white">Quick Links</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+                <li><a href="#pricing" class="hover:text-blue-400 transition">Pricing</a></li>
+                <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold text-white">Contact Us</h3>
+            <p class="mt-2 text-gray-400">Email: Shiloh@mobilecarwash.com</p>
+            <p class="text-gray-400">Phone: (123) 456-7890</p>
+            <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-10 border-t border-gray-700 pt-4 text-gray-500 text-sm">
+        © 2025 Mobile Car Wash. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', function () {
+            const answer = this.nextElementSibling;
+            answer.classList.toggle('hidden');
+            this.querySelector('span').textContent = answer.classList.contains('hidden') ? '+' : '-';
+        });
+    });
+</script>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+        document.getElementById(tabId).classList.remove('hidden');
+
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+</script>
+
+<style>
+    .tab-btn {
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    .tab-btn.active {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            gsap.to(window, {duration: 1.5, scrollTo: {y: this.getAttribute('href'), offsetY: 70}, ease: "power2.inOut"});
+        });
+    });
+    </script>
+
+<script>
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      once: false, // Allows animation to happen every time the section appears
+      mirror: true, // Animates elements when scrolling back up
+    });
+  </script>
+
+</body>
+</html>
