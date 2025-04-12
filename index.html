@@ -63,6 +63,21 @@
             <li><a href="#faq" class="text-white hover:text-blue-500">FAQ</a></li>
         </ul>
     </div>
+
+    <!-- Fancy Floating Call Us Button - Mobile Only -->
+    <a href="tel:+1 548 333-8653"
+       class="fixed bottom-5 right-4 bg-gradient-to-r from-blue-600 to-teal-500 text-white px-5 py-3 rounded-full shadow-lg text-base font-semibold 
+       flex items-center gap-2 animate-bounce hover:scale-105 transition-all duration-300 md:hidden z-50">
+
+          <!-- Phone Icon -->
+          <i class="fa-solid fa-phone-volume" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+       d="M3 5a2 2 0 012-2h3.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0012 5.414V7a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 15a2 2 0 012-2h3.586a1 1 0 01.707.293l1.414 1.414A1 1 0 0012 17.414V19a2 2 0 01-2 2H5a2 2 0 01-2-2v-4zM17 7h2a2 2 0 012 2v3.586a1 1 0 01-.293.707l-1.414 1.414A1 1 0 0118.586 15H17a2 2 0 01-2-2V9a2 2 0 012-2z" />
+    </i>
+     Call Us
+     </a>
+
+
 </nav>
 
 <script>
@@ -265,39 +280,38 @@ document.addEventListener("scroll", function () {
     
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="slide-right">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">📞 Call Us</h3>
-                    <p class="text-lg text-gray-600">+1 (123) 456-7890</p>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i class="fa-solid fa-phone-volume"></i> Call Us</h3>
+                    <p class="text-lg text-gray-600">+1 548 333-8653</p>
                 </div>
     
                 <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">✉️ Email Us</h3>
-                    <p class="text-lg text-gray-600">Shiloh@carwash.com</p>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i class="fa-solid fa-envelope"></i> Email Us</h3>
+                    <p class="text-lg text-gray-600">Shiloh.11.ca@gmail.com</p>
                 </div>
     
                 <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">⏰ Working Hours</h3>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i class="fa-solid fa-clock"></i> Working Hours</h3>
                     <p class="text-lg text-gray-600">Mon - Sun: 7:00 AM - 10:00 PM</p>
                 </div>
     
                 <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="slide-right">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">📍 Service Area</h3>
-                    <p class="text-lg text-gray-600">We come to you! Serving multiple locations.</p>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i class="fa-solid fa-location-dot"></i> Service Area</h3>
+                    <p class="text-lg text-gray-600">We come to you! Serving all over GTA, Canada.</p>
                 </div>
             </div>
     
             <div class="mt-8 flex justify-center space-x-6" data-aos="slide-right">
-                <a href="#" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-blue-500 hover:text-blue-700 text-3xl"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-red-600 hover:text-red-800 text-3xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/shiloh0151?igsh=bGIzNXFtYzZvZmxr&utm_source=qr" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@shiloh0151?_t=ZM-8uwEcmAYHKB&_r=1" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </section>
 
-    <section id="booking" class="py-16 bg-gray-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-4xl font-bold text-white mb-10">Book Your Car Wash</h2>
+    <section id="booking" class="py-16 bg-gray-900 text-white bg-cover bg-center" style="background-image: url('images/book.jpg');">
+        <div class="max-w-xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-xl text-white">
+            <h2 class="text-3xl font-bold mb-6 text-center">Book Your Wash</h2>
       
-          <form id="bookingForm" class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+          <form id="bookingForm" class="max-w-2xl mx-auto">
             <!-- Full Name -->
             <div class="mb-4">
               <label for="fullName" class="block text-left text-lg">Full Name</label>
@@ -398,11 +412,16 @@ document.addEventListener("scroll", function () {
                   document.getElementById("successMessage").textContent = "✅ Booking confirmed! Confirmation email sent.";
                   document.getElementById("successMessage").classList.remove("hidden", "text-green-400", "text-yellow-400", "text-red-400");
                   document.getElementById("successMessage").classList.add("text-green-400");
+
+                  setTimeout(() => {
+                  document.getElementById("successMessage").classList.add("hidden");
+                  }, 5000);
+
                   form.reset();
                 })
                 .catch((error) => {
                   console.error("EmailJS Error:", error);
-                  document.getElementById("successMessage").textContent = "✅ Booking confirmed, but email not sent.";
+                  document.getElementById("successMessage").textContent = "✅ Booking confirmed, We'll contact you soon.";
                   document.getElementById("successMessage").classList.remove("hidden");
                   document.getElementById("successMessage").classList.add("text-yellow-400");
                   form.reset();
@@ -419,11 +438,11 @@ document.addEventListener("scroll", function () {
       </section>
 
     <section id="faq" class="py-16 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-6" data-aos="slide-right">
+    <div class="max-w-4xl mx-auto px-6" data-aos="slide-up">
         <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Frequently Asked Questions</h2>
         
         <div class="space-y-4">
-            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-up">
                 <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
                     How does the mobile car wash service work?
                     <span class="text-xl">+</span>
@@ -434,7 +453,7 @@ document.addEventListener("scroll", function () {
                 </p>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-up">
                 <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
                     Do I need to be present during the service?
                     <span class="text-xl">+</span>
@@ -445,7 +464,7 @@ document.addEventListener("scroll", function () {
                 </p>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-up">
                 <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
                     What areas do you serve?
                     <span class="text-xl">+</span>
@@ -456,7 +475,7 @@ document.addEventListener("scroll", function () {
                 </p>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-right">
+            <div class="bg-white shadow-md rounded-lg p-4" data-aos="slide-up">
                 <button class="flex justify-between items-center w-full text-lg font-semibold text-gray-800 faq-toggle">
                     What if it rains on the day of my appointment?
                     <span class="text-xl">+</span>
@@ -469,7 +488,7 @@ document.addEventListener("scroll", function () {
     </div>
 </section>
 
-<footer class="bg-gray-900 text-gray-300 py-10">
+<footer class="bg-gray-900 text-gray-300 py-10" z-index="-5">
     <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
         
         <div>
@@ -489,12 +508,11 @@ document.addEventListener("scroll", function () {
 
         <div>
             <h3 class="text-xl font-semibold text-white">Contact Us</h3>
-            <p class="mt-2 text-gray-400">Email: Shiloh@mobilecarwash.com</p>
-            <p class="text-gray-400">Phone: (123) 456-7890</p>
+            <p class="mt-2 text-gray-400">Email: Shiloh.11.ca@gmail.com</p>
+            <p class="text-gray-400">Phone: +1 548 333-8653</p>
             <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/shiloh0151?igsh=bGIzNXFtYzZvZmxr&utm_source=qr" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@shiloh0151?_t=ZM-8uwEcmAYHKB&_r=1" class="text-blue-400 hover:text-blue-300 transition text-2xl"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
